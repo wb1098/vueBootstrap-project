@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://unpkg.com/vue"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="style.css">
+    <meta charset="utf-8">
+    <title>Vue Components Part II</title>
+</head>
+
+<body>
+    <script type="text/x-template" id="display-card">
+        <div>
+            <div v-for="business in data">
+                <div class="card" style="width: 20rem;">
+                    <img class="card-img-top" v-bind:src="business.cardImg">
+                    <div class="card-body">
+                        <h4 class="card-title"> {{business.cardTitle}}
+                        </h4>
+                        <p class="card-text"> {{business.cardText}}</p>
+                        <a v-bind:href="business.buttonURL" class="btn btn-primary"> {{business.buttonText}} </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+
+    <div id="bus-card">
+        <displaycardcomp :data="businessList"></displaycardcomp>
+    </div>
+
+    <footer>heckle design - 2017</footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
